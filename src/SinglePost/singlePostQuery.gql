@@ -1,0 +1,22 @@
+query ($postName: String!, $categoryName: String!) {
+  posts(where: {name: $postName, categoryName: $categoryName}) {
+    nodes {
+      title
+      content
+      uri
+      featuredImage {
+        altText
+        sourceUrl
+        title
+      }
+      tags {
+        nodes {
+          name
+          link
+          uri
+          slug
+        }
+      }
+    }
+  }
+}

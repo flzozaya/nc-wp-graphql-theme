@@ -1,0 +1,8 @@
+.layout-sidebar-right {
+    display: flex;
+    flex-direction: row;
+
+    @media screen and (max-width: 992px) {
+        flex-direction: column;
+    }
+}
