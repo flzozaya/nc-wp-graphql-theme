@@ -1,0 +1,19 @@
+query {
+  categories {
+    nodes {
+      name
+      posts(first: 3) {
+        nodes {
+          title
+					uri
+          termNames
+          date
+          featuredImage {
+            altText
+            sourceUrl
+          }
+        }
+      }
+    }
+  }
+}
