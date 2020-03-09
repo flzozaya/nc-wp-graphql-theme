@@ -1,0 +1,122 @@
+.footer {
+  // min-height: 350px;
+  background-color: #fdf0e6;
+  display: flex;
+  font-family: 'Museo W03_300', sans-serif;
+
+  &__container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: end;
+    margin: 1rem auto;
+    width: 100%;
+
+    @media screen and (max-width: 1120px) {
+      justify-content: space-evenly;
+    }
+
+    @media screen and (max-width: 767px) {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  }
+
+  &__newsletter-signup {
+    text-align: center;
+    line-height: 2;
+    font-size: 115%;
+    padding: 2.3rem;
+    margin-right: 2rem;
+    border-radius: 2px;
+    background-image: url(https://www.brides.com/static/1.47.0/image/newsletter/email.png);
+    background-repeat: no-repeat;
+    background-position-y: bottom;
+    // background-color: #f9bfa3;
+    background-color: #f08e80c4;
+
+    @media screen and (max-width: 1200px) {
+      padding: 1.5rem 1rem;
+    }
+    @media screen and (max-width: 980px) {
+      font-size: 95%;
+    }
+    @media screen and (max-width: 767px) {
+      margin-right: 0;
+    }
+
+    .signup {
+      display: flex;
+      justify-content: center;
+      margin-top: 2rem;
+
+      .singup-email-input {
+        border: 0;
+        padding: 0.8rem;
+        width: 60%;
+        max-width: 250px;
+        // margin-right: 1rem;
+      }
+
+      .signup-button {
+        color: #fff;
+        // background-color: #e27f64;
+        // border-color: #e27f64;
+        background-color: #000000;
+        border-color: #000000;
+        font-size: 1rem;
+        font-weight: bold;
+        padding: 0.6rem 0.8rem;
+        // opacity: 0.7;
+        cursor: pointer;
+      }
+    }
+  }
+  &__menu {
+    @media screen and (max-width: 767px) {
+      margin-top: 1.5rem;
+    }
+
+    .nav-items {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      white-space: nowrap;
+
+
+      @media screen and (max-width: 1120px) {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        white-space: normal;
+      }
+
+      @media screen and (max-width: 1024px) {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      @media screen and (max-width: 767px) {
+        text-align: left;
+      }
+
+      .item {
+        padding: 3px;
+        display: inline-block;
+        font-family: Museo;
+        margin-right: 8px;
+      }
+    }
+
+    .social-media-icons {
+      width: 130px;
+      margin-top: 2rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo-copyright {
+      margin-top: 1rem;
+    }
+  }
+}
