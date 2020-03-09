@@ -1,0 +1,51 @@
+diff --git a/node_modules/@devloco/react-scripts-wptheme/config/webpack.config.js b/node_modules/@devloco/react-scripts-wptheme/config/webpack.config.js
+index 806e536..c6db2e0 100644
+--- a/node_modules/@devloco/react-scripts-wptheme/config/webpack.config.js
++++ b/node_modules/@devloco/react-scripts-wptheme/config/webpack.config.js
+@@ -557,6 +557,12 @@ module.exports = function(webpackEnv) {
+                 'sass-loader'
+               ),
+             },
++            {
++              test: /\.(graphql|gql)$/,
++              include: paths.appSrc,
++              exclude: /node_modules/,
++              loader: 'graphql-tag/loader'
++            },
+             // "file" loader makes sure those assets get served by WebpackDevServer.
+             // When you `import` an asset, you get its (virtual) filename.
+             // In production, they would get copied to the `build` folder.
+@@ -568,7 +574,7 @@ module.exports = function(webpackEnv) {
+               // its runtime that would otherwise be processed through "file" loader.
+               // Also exclude `html` and `json` extensions so they get processed
+               // by webpacks internal loaders.
+-              exclude: [/\.(js|mjs|jsx|ts|tsx)$/, /\.html$/, /\.json$/],
++              exclude: [/\.(js|mjs|jsx|ts|tsx)$/, /\.html$/, /\.json$/, /\.(graphql|gql)$/],
+               options: {
+                 name: 'static/media/[name].[hash:8].[ext]',
+               },
+diff --git a/node_modules/@devloco/react-scripts-wptheme/config/webpack.config.wptheme.js b/node_modules/@devloco/react-scripts-wptheme/config/webpack.config.wptheme.js
+index e810a37..c233e59 100644
+--- a/node_modules/@devloco/react-scripts-wptheme/config/webpack.config.wptheme.js
++++ b/node_modules/@devloco/react-scripts-wptheme/config/webpack.config.wptheme.js
+@@ -583,6 +583,12 @@ module.exports = function(webpackEnv) {
+                 'sass-loader'
+               ),
+             },
++            {
++              test: /\.(graphql|gql)$/,
++              include: paths.appSrc,
++              exclude: /node_modules/,
++              loader: 'graphql-tag/loader'
++            },
+             // "file" loader makes sure those assets get served by WebpackDevServer.
+             // When you `import` an asset, you get its (virtual) filename.
+             // In production, they would get copied to the `build` folder.
+@@ -600,6 +606,7 @@ module.exports = function(webpackEnv) {
+                 /\.html$/,
+                 /\.json$/,
+                 /\.php$/,
++                /\.(graphql|gql)$/
+               ],
+               options: {
+                 name: 'static/media/[name].[hash:8].[ext]',
