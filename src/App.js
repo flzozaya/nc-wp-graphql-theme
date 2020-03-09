@@ -1,26 +1,39 @@
 import React from 'react';
-import logo from './logo.svg';
+import { Router } from '@reach/router';
+import ApolloClient from 'apollo-boost';
+import { ApolloProvider } from '@apollo/react-hooks';
+import { CloudinaryContext } from 'cloudinary-react';
+
+import Home from './Home';
+import PageTemplate from './PageTemplate';
+import Footer from './Footer';
+import Posts from './Posts';
+import SinglePost from './SinglePost';
+import Navigation from './Navigation';
+
 import './App.css';
 
-function App() {
+const cloudinaryCloudName = process.env.REACT_APP_CLOUDINARY_CLOUD_NAME;
+const client = new ApolloClient({
+  uri: `${process.env.REACT_APP_GRAPHQL_ROOT_URL}/graphql`
+});
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>react-src/src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ApolloProvider client={client}>
+      <CloudinaryContext cloudName={cloudinaryCloudName}>
+        <Navigation />
+        <Router>
+          <Home path="/" name="home" />
+          <PageTemplate path="/about" name="about" />
+          <PageTemplate path="/contact" name="contact" />
+          <Posts path="/:category" name="posts" />
+          <SinglePost path="/:category/:postName" name="single-post" />
+        </Router>
+        <Footer />
+      </CloudinaryContext>
+    </ApolloProvider>
   );
-}
+};
 
 export default App;
