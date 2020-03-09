@@ -1,0 +1,35 @@
+#primary.main-content-area.content-list {
+  width: 100%;
+
+  .primary-header {
+    text-align: center;
+    border-bottom: 1px solid #f3f3f3;
+    padding-bottom: 2rem;
+
+    .primary-header-title {
+      font-weight: normal;
+      font-size: 1.5rem;
+      margin: 1rem auto;
+    }
+    .post-count {
+      opacity: 0.6;
+    }
+  }
+
+  .content-area {
+    .post-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+
+      .top-post {
+        width: 100%;
+        text-align: center;
+      }
+
+      .post-box-item {
+        width: 48.5%;
+      }
+    }
+  }
+}
