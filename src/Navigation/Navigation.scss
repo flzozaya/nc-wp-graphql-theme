@@ -1,0 +1,200 @@
+%nav-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
+}
+
+%nav-link {
+  display: block;
+  padding: 0.75rem 2rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: 'Raleway', sans-serif;
+  color: inherit;
+  letter-spacing: 2px;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 0.62rem;
+}
+
+#header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3.75rem;
+  padding: 0 2rem;
+  z-index: 11;
+  background-color: #fff;
+  box-sizing: content-box;
+  border-bottom: 1px solid #efefef;
+
+  @media screen and (max-width: 992px) {
+    height: 2.8rem;
+    border-bottom: none;
+    padding: 0 4%;
+  }
+
+  .header-wrapper {
+    margin: 0 auto;
+    max-width: 1200px;
+    width: 100%;
+    height: 100%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+
+    @media screen and (max-width: 992px) {
+      display: none;
+    }
+
+    .header__nav {
+      &-list {
+        @extend %nav-list;
+
+        position: relative;
+
+        &-item {
+          display: inline-flex;
+          align-items: baseline;
+          padding-left: 0.3rem;
+          padding-right: 0.3rem;
+
+          &:not(.header__nav-list-item-social):last-child::after {
+            display: none;
+          }
+
+          &:not(.header__nav-list-item-social)::after {
+            content: '\A';
+            background-color: #f08e80;
+            align-self: center;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+          }
+
+          &-link {
+            @extend %nav-link;
+
+            line-height: 35px;
+
+            &-social {
+              padding: 0.6rem;
+            }
+          }
+        }
+      }
+
+      &-subnav-list {
+        @extend %nav-list;
+
+        position: absolute;
+        top: 100%;
+        margin-top: 1px;
+        background-color: #ffffff;
+        -webkit-box-shadow: 0 5px 10px 1px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 5px 10px 1px rgba(0, 0, 0, 0.2);
+
+        &-item-link {
+          @extend %nav-link;
+          text-transform: lowercase;
+          font-size: 0.88rem;
+          opacity: 0.4;
+          line-height: 25px;
+
+          &:hover {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+
+  .mobile-nav-wrapper {
+    height: 100%;
+
+    .mobile-nav {
+      display: none;
+      justify-content: space-between;
+      margin: 0 auto;
+      width: 100%;
+      height: 100%;
+      align-items: center;
+
+      @media screen and (max-width: 992px) {
+        display: flex;
+      }
+
+      .hamburger {
+        font-size: 1.5rem;
+        color: #000;
+      }
+    }
+
+    .mobile-nav-menu {
+      position: absolute;
+      display: block;
+      // left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      height: 100vh;
+      width: 100%;
+      max-width: 290px;
+      background-color: #fcfcfc;
+      -webkit-box-shadow: 0 5px 10px 1px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 5px 10px 1px rgba(0, 0, 0, 0.2);
+
+      .close-menu {
+        font-size: 1.5rem;
+        color: #888888;
+        display: flex;
+        align-items: center;
+        height: 2.8rem;
+        margin-bottom: 2rem;
+        // justify-content: flex-end;
+        // padding-right: 12%;
+        justify-content: flex-start;
+        padding-left: 4%;
+      }
+
+      .header__nav {
+        padding: 0 1rem;
+
+        &-list {
+          @extend %nav-list;
+
+          &-item {
+            display: block;
+            padding: 0.3rem;
+            border-bottom: 1px solid #dddddd;
+
+            &-link {
+              @extend %nav-link;
+              display: flex;
+              justify-content: space-between;
+
+              .mobile-dropdown {
+                line-height: 0.8;
+                font-size: 1rem;
+              }
+
+              // line-height: 35px;
+
+              // &-social {
+              //   padding: 0.6rem;
+              // }
+            }
+          }
+        }
+      }
+    }
+  }
+}

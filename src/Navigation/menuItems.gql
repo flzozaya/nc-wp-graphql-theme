@@ -1,0 +1,18 @@
+query($name: String!) {
+  menus(where: {slug: $name }) {
+    nodes {
+      menuItems {
+        nodes {
+          label
+          url
+          childItems {
+            nodes {
+              label
+              url
+            }
+          }
+        }
+      }
+    }
+  }
+}
