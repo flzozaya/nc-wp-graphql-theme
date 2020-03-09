@@ -1,0 +1,101 @@
+.primary-featured-post {
+  &__header {
+    margin: 0.8rem 0 1rem;
+  }
+
+  &__subcategory {
+    font-size: 0.8rem;
+    font-family: 'Domaine Display Regular', serif;
+    font-weight: 100;
+    font-style: italic;
+  }
+
+  &__title-wrapper,
+  &__title {
+    // font-family: 'Raleway', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.65rem;
+    font-weight: 100;
+    margin: 0.7rem 0 0.1rem;
+    text-decoration: none;
+    color: #000000;
+  }
+
+  &__image-wrapper {
+    display: block;
+  }
+
+  .primary-featured-image {
+    width: 100%;
+  }
+
+  &__social {
+    margin: 1.5rem 0 2.5rem;
+  }
+}
+
+.featured-post-card {
+  position: relative;
+  text-decoration: none;
+  background-color: #ffffff;
+  -webkit-box-shadow: 0 1px 14px -9px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 1px 14px -9px rgba(0, 0, 0, 0.15);
+
+  &__image-wrapper {
+    overflow: hidden;
+    position: relative;
+    display: block;
+
+    .image-inset-border {
+      position: absolute;
+      z-index: 1;
+      border: 2px solid #ffffff;
+      width: 93%;
+      height: 88%;
+      margin: auto;
+      top: -2px;
+      left: 0;
+      bottom: 0;
+      right: 0;
+    }
+
+    .featured-post-card__image {
+      opacity: 0.85;
+    }
+  }
+
+  &__details {
+    color: #000000;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 300;
+    font-size: 1.3rem;
+    text-align: center;
+    padding: 0.3rem 0 0.7rem 0;
+
+    .featured-post-card__title {
+      font-weight: 100;
+      margin: 0.2rem 0;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.4rem;
+    }
+  }
+
+  &__subcategory {
+    font-size: 0.8rem;
+    font-family: 'Domaine Display Regular', serif;
+    font-weight: 100;
+    font-style: italic;
+
+    .subcategory-separator {
+      margin: 0 0.7rem;
+      width: 5px;
+      height: 5px;
+      background-color: rgb(237, 166, 121);
+      border-radius: 50%;
+      display: inline-block;
+      vertical-align: middle;
+      position: relative;
+      top: -1px;
+    }
+  }
+}
