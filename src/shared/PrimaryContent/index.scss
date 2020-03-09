@@ -1,0 +1,32 @@
+#primary.main-content-area.single-post {
+  width: 100%;
+
+  .primary-featured-image {
+    width: 100%;
+  }
+
+  .primary-header-title {
+    font-weight: normal;
+    font-size: 2rem;
+    margin: 1rem auto;
+  }
+
+  .subline {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    .social-sharer {
+      max-width: 150px;
+      display: inline-block;
+    }
+    .byline-text {
+      font-style: italic;
+      font-size: 0.7rem;
+    }
+  }
+
+  .content-area {
+    margin-top: 2.5rem;
+  }
+}
