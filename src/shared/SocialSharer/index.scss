@@ -1,0 +1,20 @@
+.sharer {
+  display: block;
+  text-align: center;
+
+  .share-text {
+    font-family: 'Museo W03_700';
+    color: #aaa;
+    font-size: 0.65rem;
+    letter-spacing: 1px;
+    margin-right: 0.5rem;
+  }
+
+  .social-share-icon {
+    display: inline-block;
+    color: #333;
+    text-decoration: none;
+    font-size: 0.9rem;
+    margin-right: 1rem;
+  }
+}
