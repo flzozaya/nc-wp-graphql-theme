@@ -1,0 +1,22 @@
+query ($name: String!) {
+  pages(where: { name: $name }) {
+    nodes {
+      id
+      content
+      title
+      featuredImage {
+        altText
+        caption
+        sourceUrl
+      }
+    }
+  }
+  tags {
+    nodes {
+      name
+      link
+      uri
+      slug
+    }
+  }
+}
