@@ -1,0 +1,30 @@
+query($categoryName: String!) {
+  categories(where: { name: [$categoryName] }) {
+    nodes {
+      count
+      name
+      posts {
+        nodes {
+          title
+          date
+          uri
+          excerpt
+          termNames
+          featuredImage {
+            altText
+            sourceUrl
+            title
+          }
+        }
+      }
+    }
+  }
+  tags {
+    nodes {
+      name
+      link
+      uri
+      slug
+    }
+  }
+}
